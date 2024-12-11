@@ -1,18 +1,24 @@
-from pykafka import KafkaClient
+from data_reader import formate_data
+from kafka import preduce_data
+from flask import Flask
+
+"""data = formate_data()
+
+for d in data:
+    d_str=str(d)
+    preduce_data(data=d_str)"""
+    
+    
+app=Flask(__name__)
+
+@app.route("/")
+def index():
+    return("index")
 
 
-
-client= KafkaClient(hosts='localhost:9092')
-
-topic = client.topics["busdata"]
+@app.route("/get")
+def 
 
 
-producer= topic.get_sync_producer()
-
-
-
-
-
-def preduce_data():
-    producer.produce("Hello World".encode("utf-8"))
-     
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8000)
