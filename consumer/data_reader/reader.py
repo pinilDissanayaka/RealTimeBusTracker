@@ -29,6 +29,7 @@ def formate_data()-> dict:
         formated_data.append(data_point)
         
         
+        
     return formated_data
 
 

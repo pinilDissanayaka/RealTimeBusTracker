@@ -1,24 +1,16 @@
-from flask import Flask
-
-"""data = formate_data()
-
-for d in data:
-    d_str=str(d)
-    preduce_data(data=d_str)"""
-    
-    
-app=Flask(__name__)
-
-@app.route("/")
-def index():
-    return("index")
+from flask import Flask, render_template, Response
+from kafka import get_checkpoint
 
 
-@app.route("/get")
-def get():
-    pass
-    
+app = Flask(__name__)
 
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000)
+#Consumer API
+@app.route('/')
+def get_messages():
+    topicname = 'busdatat'
+
+    return Response(get_checkpoint(), mimetype="text/event-stream")
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5001)

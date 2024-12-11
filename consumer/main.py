@@ -7,4 +7,5 @@ data = formate_data()
 
 
 for _data in data:
+    print(_data)
     preduce_data(data=_data)
