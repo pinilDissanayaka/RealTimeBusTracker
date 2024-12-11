@@ -1,5 +1,3 @@
-from data_reader import formate_data
-from kafka import preduce_data
 from flask import Flask
 
 """data = formate_data()
@@ -17,7 +15,9 @@ def index():
 
 
 @app.route("/get")
-def 
+def get():
+    pass
+    
 
 
 if __name__ == "__main__":
