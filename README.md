@@ -32,53 +32,47 @@ https://github.com/user-attachments/assets/60025e1b-54a4-4db9-8386-a27c11ed9921
 - Flask: Install Flask for the web interface.
 - ESP32 Board: Set up with NEO-6M GPS Module.
 
-1. Set up the ESP32 Device
+### Set up the ESP32 Device
    
-i. Install the required libraries for the ESP32, including the GPS library.
-
-ii. Upload the code from the /device/esp32_gps.py to the ESP32 board.
-
-iii. Configure the device to connect to the AWS IoT Core using the credentials provided in your AWS account.
+1. Install the required libraries for the ESP32, including the GPS library.
+2. Upload the code from the /device/esp32_gps.py to the ESP32 board.
+3. Configure the device to connect to the AWS IoT Core using the credentials provided in your AWS account.
 
 
-3. Set up Apache Kafka
+### Set up Apache Kafka
    
-i. Install Kafka on your local machine or use a managed Kafka service.
+1. Install Kafka on your local machine or use a managed Kafka service.
+2. Create a Kafka topic for bus location data.
+3. Run the Kafka broker.
 
-ii. Create a Kafka topic for bus location data.
-
-iii. Run the Kafka broker.
-
-5. Set up AWS IoT Core
+### Set up AWS IoT Core
    
-i. Create an IoT thing on AWS IoT Core.
+1. Create an IoT thing on AWS IoT Core.
+2. Attach a certificate and policy for communication between the ESP32 and AWS IoT.
+3. Ensure your IoT device is properly connected and able to publish GPS data to AWS.
 
-ii. Attach a certificate and policy for communication between the ESP32 and AWS IoT.
-
-iii. Ensure your IoT device is properly connected and able to publish GPS data to AWS.
-
-7. Set up the Flask Web Application
+### Set up the Flask Web Application
    
-i. Install Flask and required dependencies:
+1. Install Flask and required dependencies:
 ```
 pip install flask pykafka
 ```
 
-ii. Run the Flask app:
+2. Run the Flask app:
 ```
 python server/server.py
 ```
 
-iii. Open your browser and go to http://localhost:5001 to see the real-time bus tracking interface.
+3. Open your browser and go to http://localhost:5001 to see the real-time bus tracking interface.
 
-5. Set up Kafka Producer and Consumer
+### Set up Kafka Producer and Consumer
    
-i. Run the Kafka producer to send data from ESP32 to Kafka topic:
+1. Run the Kafka producer to send data from ESP32 to Kafka topic:
 ```
 python kafka/producer.py
 ```
 
-ii. Run the Kafka consumer to process data and pass it to Flask:
+2. Run the Kafka consumer to process data and pass it to Flask:
 ```
 python kafka/consumer.py
 ```
