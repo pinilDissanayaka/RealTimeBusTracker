@@ -2,6 +2,10 @@
 
 This repository contains a real-time bus tracker application that allows users to track buses in real-time on a map. The system uses the NEO-6M GPS Module connected to an ESP32 device to collect GPS data, which is transmitted to AWS IoT. The application processes this data using Apache Kafka and PyKafka to stream GPS data to a Flask web application for real-time display.
 
+
+https://github.com/user-attachments/assets/60025e1b-54a4-4db9-8386-a27c11ed9921
+
+
 ## Features
 - Real-time bus tracking using GPS data.
 - Flask-based web interface to display bus locations on a map.
