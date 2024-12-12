@@ -33,21 +33,32 @@ https://github.com/user-attachments/assets/60025e1b-54a4-4db9-8386-a27c11ed9921
 - ESP32 Board: Set up with NEO-6M GPS Module.
 
 1. Set up the ESP32 Device
+   
 i. Install the required libraries for the ESP32, including the GPS library.
+
 ii. Upload the code from the /device/esp32_gps.py to the ESP32 board.
+
 iii. Configure the device to connect to the AWS IoT Core using the credentials provided in your AWS account.
 
-2. Set up Apache Kafka
+
+3. Set up Apache Kafka
+   
 i. Install Kafka on your local machine or use a managed Kafka service.
+
 ii. Create a Kafka topic for bus location data.
+
 iii. Run the Kafka broker.
 
-3. Set up AWS IoT Core
+5. Set up AWS IoT Core
+   
 i. Create an IoT thing on AWS IoT Core.
+
 ii. Attach a certificate and policy for communication between the ESP32 and AWS IoT.
+
 iii. Ensure your IoT device is properly connected and able to publish GPS data to AWS.
 
-4. Set up the Flask Web Application
+7. Set up the Flask Web Application
+   
 i. Install Flask and required dependencies:
 ```
 pip install flask pykafka
@@ -61,6 +72,7 @@ python server/server.py
 iii. Open your browser and go to http://localhost:5001 to see the real-time bus tracking interface.
 
 5. Set up Kafka Producer and Consumer
+   
 i. Run the Kafka producer to send data from ESP32 to Kafka topic:
 ```
 python kafka/producer.py
