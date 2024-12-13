@@ -22,8 +22,7 @@ map.on('click', onMapClick);
 
 
 const checkpoints = new Map();
-const current_chechpoint=new Map();
-const isFiltered =false;
+const current_chechpoint = new Map();
 
 var source = new EventSource(BASE_URL + "/");
 source.addEventListener('message', function (e) {
@@ -58,20 +57,16 @@ source.addEventListener('message', function (e) {
 }, false);
 
 
+document.getElementById('filter-button').addEventListener('click', function () {
+    const busFilter = document.getElementById('filter-text').value.trim();
+    const filterButton = document.getElementById('filter-button');
 
-function filterMap(){
-    var filter_button=document.getElementById("filter-button");
 
-    if(filter_button){
-        var filter_query=filter_button.value.trim();
-        console.log(filter_query);
-    }
-    else{
-        filter_button.textContent="Filter";
+    if(filterButton){
+        console.log(busFilter);
     }
 
-    
+});
 
-    
 
-}
+
